@@ -1,0 +1,11 @@
+{
+  "name": "wardrobe",
+  "version": "1.0.0",
+  "description": "A simple app for adding/listing clothes, built with Next.js, GraphQL, and Node.js\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
