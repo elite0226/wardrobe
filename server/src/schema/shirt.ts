@@ -1,15 +1,12 @@
-import { gql } from 'apollo-server-express'
+import { gql } from 'apollo-server-express';
 
 export const typeDefs = gql`
   extend type Query {
     allShirts: [Shirt]
   }
-  
+
   extend type Mutation {
-    createShirt(
-      name: String!,
-      color: String!
-    ): Shirt 
+    createShirt(name: String!, color: String!): Shirt
   }
   type Shirt {
     id: ID!

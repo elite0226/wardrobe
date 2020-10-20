@@ -1,11 +1,12 @@
-import { Pant } from '../models/Pant'
+import { Pant } from '../models/Pant';
 
 export const resolvers = {
   Query: {
-    allPants: async () => Pant.query(),
+    allPants: async (): Promise<Pant[]> => Pant.query(),
   },
 
   Mutation: {
-    createPant: async(_: any, data: Pant) => Pant.query().insert(data)
+    createPant: async (_: unknown, data: Pant): Promise<Pant> =>
+      Pant.query().insert(data),
   },
-}
+};

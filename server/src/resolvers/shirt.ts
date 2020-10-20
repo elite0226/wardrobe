@@ -1,10 +1,11 @@
-import { Shirt } from '../models/Shirt'
+import { Shirt } from '../models/Shirt';
 
 export const resolvers = {
   Query: {
-    allShirts: async () => Shirt.query(),
+    allShirts: async (): Promise<Shirt[]> => Shirt.query(),
   },
   Mutation: {
-    createPant: async(_: any, data: Shirt) => Shirt.query().insert(data)
-  }
-}
+    createPant: async (_: unknown, data: Shirt): Promise<Shirt> =>
+      Shirt.query().insert(data),
+  },
+};

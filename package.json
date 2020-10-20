@@ -2,10 +2,22 @@
   "name": "wardrobe",
   "version": "1.0.0",
   "description": "A simple app for adding/listing clothes, built with Next.js, GraphQL, and Node.js\"",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "scripts": {
+    "dev": "ts-node index.ts",
+    "start": "ts-node index.ts",
+    "lint": "cd server && yarn lint",
+    "format": "prettier \"**/*.{js,jsx,ts,tsx}\" --write"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "devDependencies": {
+    "husky": "^4.3.0",
+    "lint-staged": "^10.4.2",
+    "prettier": "^2.1.2"
+  }
 }

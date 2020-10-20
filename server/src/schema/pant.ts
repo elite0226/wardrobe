@@ -1,4 +1,4 @@
-import { gql } from 'apollo-server-express'
+import { gql } from 'apollo-server-express';
 
 export const typeDefs = gql`
   extend type Query {
@@ -10,7 +10,7 @@ export const typeDefs = gql`
       color: String!
       width: Float!
       length: Float!
-    ): Pant 
+    ): Pant
   }
   type Pant {
     id: ID!

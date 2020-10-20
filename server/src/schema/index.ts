@@ -16,8 +16,4 @@ const linkSchema = gql`
   }
 `;
 
-export default [
-  linkSchema,
-  pantTypeDefs,
-  shirtTypeDefs
-];
+export default [linkSchema, pantTypeDefs, shirtTypeDefs];

@@ -1,8 +1,8 @@
-import * as express from 'express'
+import * as express from 'express';
 import * as bodyParser from 'body-parser';
 import * as cors from 'cors';
 import * as Knex from 'knex';
-import { Model } from 'objection'
+import { Model } from 'objection';
 import { ApolloServer } from 'apollo-server-express';
 
 import knexConfig from './db/config';
@@ -11,14 +11,14 @@ import resolvers from './resolvers';
 
 const port = process.env.PORT || 5000;
 
-const knex = Knex(knexConfig)
-Model.knex(knex)
+const knex = Knex(knexConfig);
+Model.knex(knex);
 
-const app = express()
+const app = express();
 
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: true }))
-app.use(cors())
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cors());
 
 const server = new ApolloServer({
   introspection: true,

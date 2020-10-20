@@ -1,11 +1,11 @@
-import { Model } from 'objection'
+import { Model } from 'objection';
 
 export class Pant extends Model {
-  id!: number
-  name!: string
-  color!: string
-  width!: number
-  length!: number
+  id!: number;
+  name!: string;
+  color!: string;
+  width!: number;
+  length!: number;
 
-  static tableName = 'pants'
+  static tableName = 'pants';
 }
