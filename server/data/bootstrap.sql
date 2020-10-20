@@ -13,6 +13,11 @@ CREATE TABLE `shirts` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+INSERT INTO `shirts` (`id`, `name`, `color`) VALUES
+(1,	'Hard Rock Cafe',	'grey'),
+(2,	'Tommy Hilfiger',	'blue'),
+(3,	'Adidas',	'white');
+
 DROP TABLE IF EXISTS `pants`;
 CREATE TABLE `pants` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -22,3 +27,8 @@ CREATE TABLE `pants` (
   `length` int(3) unsigned NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO `pants` (`id`, `name`, `color`, `width`, `length`) VALUES
+(1,	'Blue Jeans',	'blue', 32, 100),
+(2,	'Camo pants',	'green', 34, 100),
+(3,	'Black Jeans',	'black', 34, 100);
