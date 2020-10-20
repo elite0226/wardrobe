@@ -4,8 +4,7 @@ export class Shirt extends Model {
   id!: number;
   name!: string;
   color!: 'white' | 'grey' | 'blue';
-  width!: number;
-  length!: number;
+  size!: number;
 
   static tableName = 'shirts';
 }
