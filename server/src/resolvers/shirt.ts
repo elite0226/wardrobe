@@ -5,7 +5,7 @@ export const resolvers = {
     allShirts: async (): Promise<Shirt[]> => Shirt.query(),
   },
   Mutation: {
-    createPant: async (_: unknown, data: Shirt): Promise<Shirt> =>
+    createShirt: async (_: unknown, data: Shirt): Promise<Shirt> =>
       Shirt.query().insert(data),
   },
 };

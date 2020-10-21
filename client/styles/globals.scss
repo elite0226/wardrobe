@@ -1,5 +1,7 @@
 $primary-color: #2BD2CA;
 $secondary-color: #887575;
+$error-color: #F71735;
+$default-color: #9EA0A5;
 
 html,
 body {
@@ -122,3 +124,103 @@ a {
     }
   }
 }
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+
+  & > .form-label {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: $default-color;
+  }
+
+  & > .form-input {
+    width: 100%;
+    border-radius: 5px;
+    padding: 0.75rem;
+    font-size: 18px;
+    border: 1px solid #000;
+
+    &:hover {
+      border-color: #000;
+    }
+
+    &:focus {
+      border: 1px solid $primary-color;
+      outline: none;
+    }
+  }
+}
+
+.form-actions {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-error {
+  margin: 6px 0;
+  color: $error-color;
+}
+
+.button {
+  padding: 8px 20px;
+  color: #000;
+  font-size: 1.25rem;
+  font-weight: 500;
+  border-radius: 5px;
+  border: none;
+  background: none;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  &-outlined {
+    border: 1px solid $default-color;
+  }
+  &-contained {
+    background-color: $default-color;
+  }
+
+  &-small {
+    font-size: 0.75rem;
+    padding: 4px 8px;
+  }
+  &-large { 
+    font-size: 1rem;
+  }
+
+  &-primary {
+    color: $primary-color;
+  }
+  &-secondary {
+    color: $secondary-color;
+  }
+
+  &-outlined__primary {
+    border-color: $primary-color;
+  }
+  &-outlined__secondary {
+    border-color: $secondary-color;
+  }
+
+  &-contained__primary {
+    background-color: $primary-color;
+    color: #000;
+  }
+  &-contained__secondary {
+    background-color: $secondary-color;
+  }
+}
+
