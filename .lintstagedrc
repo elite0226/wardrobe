@@ -6,6 +6,9 @@
   "server/**/*.{js?(x), ts?(x)": [
     "cd server && yarn lint"
   ],
+  "client/**/*.{js?(x), ts?(x)": [
+    "cd client && yarn lint"
+  ],
   "**/*.{yml,yaml,md}": [
     "prettier --write"
   ],

@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "ts-node index.ts",
     "start": "ts-node index.ts",
-    "lint": "cd server && yarn lint",
+    "lint": "cd server && yarn lint && cd ../client && yarn lint",
     "format": "prettier \"**/*.{js,jsx,ts,tsx}\" --write"
   },
   "husky": {
