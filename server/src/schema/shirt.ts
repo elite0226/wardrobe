@@ -7,6 +7,7 @@ export const typeDefs = gql`
 
   extend type Mutation {
     createShirt(name: String!, color: String!, size: Int!): Shirt
+    deleteShirt(id: ID!): Int
   }
 
   type Shirt {

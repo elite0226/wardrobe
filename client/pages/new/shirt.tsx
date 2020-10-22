@@ -4,7 +4,7 @@ import { useMutation } from '@apollo/client';
 
 import Container from '../../components/Container';
 import Form from '../../components/Form';
-import { CREATE_SHIRT } from '../../graphql/createShirt';
+import { CREATE_SHIRT } from '../../graphql/mutations';
 
 const fields = [
   {

@@ -7,5 +7,7 @@ export const resolvers = {
   Mutation: {
     createShirt: async (_: unknown, data: Shirt): Promise<Shirt> =>
       Shirt.query().insert(data),
+    deleteShirt: async (_: unknown, { id }: Shirt): Promise<number> =>
+      Shirt.query().deleteById(id),
   },
 };

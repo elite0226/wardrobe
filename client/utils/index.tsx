@@ -1,6 +1,6 @@
 import * as Yup from 'yup';
 
-export const classnames = (classes: Array<string> | string): string => {
+export const classnames = (classes: Array<string>): string => {
   const result = [];
   if (Array.isArray(classes)) {
     for (let i = 0; i < classes.length; i += 1) {

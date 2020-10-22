@@ -7,6 +7,7 @@ export const typeDefs = gql`
 
   extend type Mutation {
     createPant(name: String!, color: String!, width: Int!, length: Int!): Pant
+    deletePant(id: ID!): Int
   }
 
   type Pant {
