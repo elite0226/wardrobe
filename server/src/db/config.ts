@@ -1,10 +1,10 @@
 const config = {
   client: 'mysql2',
   connection: {
-    host: '127.0.0.1',
+    host: process.env.DATABASE_HOST || '127.0.0.1',
     user: 'graphql',
     password: '123456',
-    port: 8006,
+    port: process.env.DATABASE_PORT || 8006,
     database: 'wardrobe',
     charset: 'utf8',
   },

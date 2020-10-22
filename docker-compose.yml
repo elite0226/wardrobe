@@ -1,24 +1,57 @@
 version: '3'
 services:
-    db:
-        image: mysql:5.7
-        restart: always
-        environment:
-            - 'MYSQL_ROOT_PASSWORD=123456'
-            - 'MYSQL_DATABASE=wardrobe'
-            - 'MYSQL_USER=graphql'
-            - 'MYSQL_PASSWORD=123456'
-        ports:
-            - 8006:3306
-        volumes:
-            - mysql_data:/var/lib/mysql
-            - ./server/data:/docker-entrypoint-initdb.d
-    adminer:
-        image: adminer:latest
-        restart: always
-        ports:
-            - 8080:8080
-        links:
-            - db
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      - 'MYSQL_ROOT_PASSWORD=123456'
+      - 'MYSQL_DATABASE=wardrobe'
+      - 'MYSQL_USER=graphql'
+      - 'MYSQL_PASSWORD=123456'
+    ports:
+      - 8006:3306
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./server/data:/docker-entrypoint-initdb.d
+  adminer:
+    image: adminer:latest
+    restart: always
+    ports:
+      - 8080:8080
+    depends_on:
+      - db
+    links:
+      - db
+  server:
+    ports:
+      - 5000:5000
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    volumes:
+      - ./server:/usr/src/server
+      - /usr/src/server/node_modules
+    environment:
+      - DATABASE_HOST=db
+      - DATABASE_PORT=3306
+    depends_on:
+      - db
+    links:
+      - db
+  client:
+    ports:
+      - 3000:3000
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    volumes:
+      - ./client:/usr/src/app
+      - /usr/src/app/node_modules
+    depends_on:
+      - server
+    links:
+      - server
+    environment:
+      SERVER_HOST: server
 volumes:
-    mysql_data: {} 
+  mysql_data: {}
